@@ -11,7 +11,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "tb_order_item")
-public class OrderItem implements Serializable{
+public class OrderItem implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @EmbeddedId
@@ -23,7 +23,7 @@ public class OrderItem implements Serializable{
     public OrderItem() {
     }
 
-    public OrderItem(Order order, Product product,Integer quantity, Double price) {
+    public OrderItem(Order order, Product product, Integer quantity, Double price) {
         id.setOrder(order);
         id.setProduct(product);
         this.quantity = quantity;
@@ -31,7 +31,7 @@ public class OrderItem implements Serializable{
     }
 
     @JsonIgnore
-    public Order getOrder(){
+    public Order getOrder() {
         return id.getOrder();
     }
 
@@ -39,7 +39,7 @@ public class OrderItem implements Serializable{
         id.setOrder(order);
     }
 
-        public Product getProduct(){
+    public Product getProduct() {
         return id.getProduct();
     }
 
@@ -88,6 +88,4 @@ public class OrderItem implements Serializable{
         return true;
     }
 
-    
-    
 }
